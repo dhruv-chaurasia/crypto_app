@@ -1,12 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const mongoURI = "mongodb+srv://dhruv:dhruv@cluster0.qez2h.mongodb.net/crypto";
 
-mongoose.connect("mongodb+srv://dhruv:dhruv@cluster0.qez2h.mongodb.net/crypto", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => {
-    console.log("Mongoose Connected");
-    
+mongoose.connect(mongoURI).then(() => {
+  console.log("Mongoose Connected");
+  
 });
 
 const BTCSchema = new mongoose.Schema([{

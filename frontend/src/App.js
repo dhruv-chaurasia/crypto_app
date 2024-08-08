@@ -60,14 +60,19 @@ const App = () => {
             <th>Price (INR)</th>
           </tr>
         </thead>
-        <tbody>
-          {prices.map((price) => (
-            <tr key={price._id}>
-              <td>{price.symbol}</td>
-              <td>{new Date(price.timestamp).toLocaleString()}</td>
-              <td>{price.price}</td>
-            </tr>
-          ))}
+        <tbody>{(prices && prices.length > 0) ?
+            prices.map((price) => (
+              <tr key={price._id}>
+                <td>{price.symbol}</td>
+                <td>{new Date(price.timestamp).toLocaleString()}</td>
+                <td>{price.price}</td>
+              </tr>
+            ))
+          :
+          <tr>
+            <td colSpan={3}>Error getting Data</td>
+          </tr>
+          }
         </tbody>
       </Table>
       <Modal show={isModalOpen} onHide={handleCloseModal}>
