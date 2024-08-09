@@ -10,6 +10,6 @@ export const cryptoReducer = (state = initialState, action) => {
         prices: action.payload,
       };
     default:
-      return state;
+      return state; 
   }
 };

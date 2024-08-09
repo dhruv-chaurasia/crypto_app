@@ -14,7 +14,7 @@ export const fetchPrices = (symbol) => async (dispatch) => {
   catch (e) {
     dispatch({
       type: "FETCH_PRICES",
-      payload: JSON.parse(localStorage.getItem(`data$${symbol}`))|| [],
+      payload: JSON.parse(localStorage.getItem(`data${symbol}`))|| [],
     });
   }
 };
